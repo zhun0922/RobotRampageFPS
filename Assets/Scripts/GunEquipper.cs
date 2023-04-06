@@ -10,6 +10,9 @@ public class GunEquipper : MonoBehaviour
     public GameObject shotgun;
     GameObject activeGun;
 
+    [SerializeField]
+    GameUI gameUI;
+
     void Start()
     {
         activeWeaponType = Constants.Pistol;
@@ -32,6 +35,8 @@ public class GunEquipper : MonoBehaviour
             loadWeapon(shotgun);
             activeWeaponType = Constants.Shotgun;
         }
+
+        gameUI.UpdateReticle();
     }
 
     private void loadWeapon(GameObject weapon)
