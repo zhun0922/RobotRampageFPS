@@ -1,14 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AssaultRifle : Gun
 {
-    override protected void Update()
+    protected override void Update()
     {
         base.Update();
-        // Shotgun & Pistol have semi-auto fire rate
-        if (Input.GetMouseButtonDown(0) && (Time.time - lastFireTime) > fireRate)
+        //Automatic Fire
+        if (Input.GetMouseButton(0) && Time.time - lastFireTime > fireRate)
         {
             lastFireTime = Time.time;
             Fire();
